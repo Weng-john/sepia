@@ -1,0 +1,38 @@
+name: Build Sepia Package
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate Skills
+        run: |
+          for skill in sepia sepia-write sepia-review sepia-refactor sepia-recreate sepia-hemingway; do
+            test -f "skills/$skill/SKILL.md" || exit 1
+          done
+
+      - name: Package source
+        run: |
+          mkdir -p dist
+          zip -r dist/sepia-source.zip \
+            plugin.json skills research README.md LICENSE \
+            .codex-plugin .agents \
+            -x '*.pyc'
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sepia-source
+          path: dist/sepia-source.zip
+          retention-days: 30
