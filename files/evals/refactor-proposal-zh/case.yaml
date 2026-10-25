@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: refactor-proposal-zh
+expected_outcome: |
+  A minimally edited Traditional Chinese paragraph that drops the era opener, buzzword stack, goal inflation and summary ending, keeps every source fact, corrects the contribution claim to helping run benchmarks on a labmate's model, and marks the missing Davis result with a placeholder instead of inventing a number.

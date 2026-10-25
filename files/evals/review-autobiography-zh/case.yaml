@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: review-autobiography-zh
+expected_outcome: |
+  A diagnosis only, no rewritten autobiography: quoted findings for the origin-myth opening, the trait list, the repeated lesson tails, the resume-in-prose coverage and the program flattery, with fixes that ask the user for real specifics instead of supplying them.

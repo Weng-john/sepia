@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: write-email-professor-en
+expected_outcome: |
+  A short English email with a specific subject line, who and why in the first two sentences, one sentence on the cold-start evaluation without inventing the paper's title or results, a single ask for a 20-minute online meeting, and the two attachments named.
